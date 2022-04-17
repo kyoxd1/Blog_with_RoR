@@ -10,3 +10,5 @@ pin "popper", to: 'popper.js', preload: true
 pin "bootstrap", to: 'bootstrap.min.js', preload: true
 # pin "bootstrap" # @5.1.3
 # pin "@popperjs/core", to: "@popperjs--core.js" # @2.11.5
+pin "trix"
+pin "@rails/actiontext", to: "actiontext.js"
