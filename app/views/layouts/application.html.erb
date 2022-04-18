@@ -11,6 +11,15 @@
   </head>
 
   <body>
+    <% if noticec%>
+    <p class="alert alert-primary"><%= notice %></p>
+    <% end %>
+    
+    <% if notice %>
+    <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+    
+    
     <%= render 'layouts/navbar' %>
     <%= yield %>
   </body>
