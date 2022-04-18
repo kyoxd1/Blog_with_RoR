@@ -26,11 +26,22 @@
         <li class="nav-item">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li>
+        <% if user_signed_in? %>
+        <li class="d-flex">
+          <%= button_to "Cerrar Sesión", destroy_user_session_path, method: :delete, class:"nav-link" %>
+        </li>
+        <span class="navbar-text">
+          Bienvenido otra ves @user_signed_in
+        </span>
+        <% else %>
+        <li class="nav-item d-flex">
+          <%= link_to "Iniciar Sesión", new_user_session_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item d-flex">
+          <%= link_to "Registro", new_user_registration_path, class:"nav-link" %>
+        </li>
+        <% end %>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
     </div>
   </div>
 </nav>
