@@ -1,21 +1,7 @@
-@import "bootstrap";
+@import '~bootstrap/scss/bootstrap';
 
-.small-container{
-    width: 100%;
-    max-width: 650px;
-}
-
-.large-container{
-    width: 100%;
-    max-width: 960px;
-}
-
-.center-block{
-    margin: 0 auto;
-}
-
-.padding{
-    padding: 10px 15px;
+body{
+    background-color: blue;
 }
 
 .margin-top{
@@ -26,7 +12,7 @@
     @extend .margin-top;
     label{
         @extend .text-uppercase;
-        @extend .text-secondary;
+        @extend .text-secundary;
     }
 
     &:first-of-type{
@@ -35,7 +21,7 @@
 
     input{
         @extend .form-control;
-        @extend .bg-light;
+        @extend .bg-ligh;
     }
     input[type='checkbox']{
         display: inline-block;
@@ -43,8 +29,4 @@
         vertical-align: middle;
         margin-right: 0.5rem;
     }
-}
-
-.font{
-    background-color: darkslategray;
 }
