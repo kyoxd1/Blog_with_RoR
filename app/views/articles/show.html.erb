@@ -1,12 +1,15 @@
-<h1><%= @article.title%></h1>
+<div class="large-container center-block">
+    <h1><%= @article.title%></h1>
+    <div>
+        <p>Escrito por: <strong> <%= @article.user.email %> </strong></p>
+    </div>
+    <div>
+        <%= @article.content%>
+    </div>
 
-
-<div>
-    <%= @article.content%>
-</div>
-
-<div>
-    <%= button_to article_path(@article), method: :delete, class:"btn btn-danger btn-sm" do %>
-            Delete
-    <% end %>
+    <div>
+        <%= button_to article_path(@article), method: :delete, class:"btn btn-danger btn-sm" do %>
+                Delete
+        <% end %>
+    </div>
 </div>
