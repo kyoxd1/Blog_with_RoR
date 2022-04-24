@@ -1,0 +1,12 @@
+<div class="small-container center-block">
+  <h1>Editar categoria</h1>
+
+  <%= render "form", category: @category %>
+
+  <br>
+
+  <div>
+    <%= link_to "Mirar esta categoria", @category %> |
+    <%= link_to "Volver a la lista de categorias", categories_path %>
+  </div>
+</div>
