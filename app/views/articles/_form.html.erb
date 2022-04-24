@@ -8,6 +8,17 @@
         <%= form.rich_text_area :content %>
     </div>
     <div>
+        <%= form.label :category_elements, "Seleccione las categorias del artículo"%>
+        <div class="row">
+            <% @categories.each do |category| %>
+                <label class="col-6 col-sm-4">
+                    <%= category.title%>
+                    <%= form.check_box :category_elements, {multiple: true}, category.id, nil %>
+                </label>
+            <% end %>   
+        </div>
+    </div>
+    <div>
         <%= form.submit %>
     </div>
 <% end %>
