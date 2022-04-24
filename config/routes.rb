@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   # get "articles/user/:user_id". to: "articles#from_author"
-
+  get "articles/myArticles", to: "articles#show_my_articles", as: :myArticles_path
+  
   resources :articles do
     get "user/:user_id", to: "articles#from_author", on: :collection
   end

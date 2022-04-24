@@ -1,10 +1,14 @@
 class ArticlesController < ApplicationController
 
     before_action :find_article, only: [:edit, :update, :show, :destory]
-    before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+    before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :show_my_articles]
 
     def index
         @articles = Article.all
+    end
+    
+    def show_my_articles
+        @articles = current_user.articles
     end
     
 
