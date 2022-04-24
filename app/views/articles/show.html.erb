@@ -1,25 +1,28 @@
 <div class="large-container center-block">
-    <h1><%= @article.title%></h1>
+    <h1>Título: <%= @article.title%></h1>
     <div>
         <p>Escrito por: <strong> <%= @article.user.email %> </strong></p>
     </div>
-    <div>
+    <div class="overflox-modificate">
         <%= @article.content%>
     </div>
 
     <div class="margin-top">
-        <p class="label">Etiquetas</p>
+        <p class="label">Categorias: </p>
         
         <% @article.categories.each do |category| %>
-            <span >
-                <%=link_to category.title, category %>
+            <span class="badge badge-pill padding" style="background-color: <%= category.color%>">
+                <%=link_to category.title, category, class:"text-white text-decoration-none" %>
             </span>
         <% end %>
         
     </div>
 
-    <div>
-        <%= button_to article_path(@article), method: :delete, class:"btn btn-danger btn-sm" do %>
+    <div class="padding">
+        <%= link_to "Editar", edit_article_path, class:"btn btn-outline-success btn-sm" %>
+    </div>
+    <div class="padding">
+        <%= button_to article_path(@article), method: :delete, class:"btn btn-outline-danger btn-sm" do %>
                 Delete
         <% end %>
     </div>

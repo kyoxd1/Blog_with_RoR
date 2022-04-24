@@ -1,15 +1,16 @@
 <%= form_with(model: @article, local: true) do |form| %>
-    <div class="field">
-        <%= form.label :title %>
-        <%= form.text_field :title %>
+    <div class="mb-3">
+        <%= form.label :title, "Título", class:"form-label" %>
+        <%= form.text_field :title, class:"form-control" %>
+        <div id="emailHelp" class="form-text">Escoja un gran título para su artículo.</div>
     </div>
-    <div class="field">
-        <%= form.label :content %>
+    <div class="overflox-modificate mb-3">
+        <%= form.label :content, "Contenido",  class:"form-label"%>
         <%= form.rich_text_area :content %>
     </div>
-    <div>
+    <div class="form-check">
         <%= form.label :category_elements, "Seleccione las categorias del artículo"%>
-        <div class="row">
+        <div class="form-check-label">
             <% @categories.each do |category| %>
                 <label class="col-6 col-sm-4">
                     <%= category.title%>
@@ -17,8 +18,9 @@
                 </label>
             <% end %>   
         </div>
+        <div id="emailHelp" class="form-text">Si no escoge una categoria se creara el artículo sin ninguna clasificación.</div>
     </div>
     <div>
-        <%= form.submit %>
+        <%= form.submit "Guardar", class:"btn btn-primary"%>
     </div>
 <% end %>

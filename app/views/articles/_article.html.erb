@@ -1,6 +1,7 @@
 <div class="card padding margin-top font">
-        <%=article.id%>
-        <h3><%= article.title%><h3>
-        <p class="text-secundary"><%=article.created_at%></p>
-        <%=link_to "Ver más", article%>
+        <h3 class="card-header text-center">Nrº. <%=article.id%> :<%= article.title%><h3>
+        <div class ="card-body">
+                <p class="text-secundary">Creado en: <%=article.created_at %></p>
+                <%=link_to "Ver más", article , class:"btn btn-secondary text-decoration-none"%>
+        </div>
 </div>
